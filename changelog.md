@@ -1,3 +1,9 @@
+2021-07-05 - Updating
+Optimization of the payment process
+Adding the payment in 2 times
+Added payment in 4 times
+Added fee rules for multiple payment transactions
+
 2021-02-19 - Updating
 Change of name of the IPS Payment payment solution to MoneyTigo.
 Improvement of the ordering process

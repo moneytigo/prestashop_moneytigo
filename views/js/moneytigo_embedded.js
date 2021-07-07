@@ -1,27 +1,17 @@
- 
- 
+	var radios = document.querySelectorAll('input[type=radio][name="payment-option"]')
+	radios.forEach(radio => radio.addEventListener('change', () => hiddenterms(radio.getAttribute('data-module-name'))));
 
-$('.ps-shown-by-js').click(function(){
+	function hiddenterms(payment) {
 
-var ClickedModuleName = $(this).attr('data-module-name');
-if(ClickedModuleName == "ipsembedded") {
-$("#conditions-to-approve").hide();
-$("#IPSERROR").hide();
-}
-else
-{
-$("#conditions-to-approve").show();
-}
+	  if (payment === 'moneytigoEmbedded') {
+	    document.getElementById('conditions-to-approve').style.display = 'none'
 
- 
-});
+	  } else {
+	    document.getElementById('conditions-to-approve').style.display = 'block'
+	  }
 
- 
-if(ips_failed == 1) {
-$('#checkout-payment-step').prepend('<div id="IPSERROR" class="alert alert-danger">'+ips_message+'</div>');
- }
+	}
 
- 
-
- 
- 
+	if (ips_failed == 1) {
+	  $('#checkout-payment-step').prepend('<div id="IPSERROR" class="alert alert-danger">' + ips_message + '</div>');
+	}

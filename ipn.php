@@ -16,8 +16,9 @@
 require_once(dirname(__FILE__).'/../../config/config.inc.php');
 include_once(dirname(__FILE__).'/../../init.php');
 require_once(dirname(__FILE__).'/moneytigo.php');
+require_once(dirname(__FILE__).'/inc/function_core.php');
 
-$moneytigo = new Moneytigo();
+$moneytigo = new moneytigoCore();
 $trxgtwId =  Tools::getValue("TransId");
 if ($trxgtwId) {
     $moneytigo->checkingTransaction($trxgtwId);

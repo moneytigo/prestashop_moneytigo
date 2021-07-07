@@ -27,19 +27,23 @@ class MoneytigoReturnModuleFrontController extends ModuleFrontController
         require_once(dirname(__FILE__).'./../../../../config/config.inc.php');
         include_once(dirname(__FILE__).'./../../../../init.php');
         require_once(dirname(__FILE__).'./../../moneytigo.php');
+		
+		
         // Init
         $moneytigo = new Moneytigo();
  
         if (!$moneytigo->isAvailable()) {
             return;
         }
+
         $cart = new Cart(Tools::getValue('id_cart'));
         $order = new Order($cart->id);
-        
+          
          
         $orderId = $order->getOrderByCartId($cart->id);
         $orderdetails = new Order((int) $orderId);
-         
+        
+		
         if ($orderId) {
             if ($orderdetails->valid == 1) {
                 $customer = new Customer((int)$cart->id_customer);

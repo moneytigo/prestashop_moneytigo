@@ -1,49 +1,48 @@
-#module-moneytigo-payment #center_column
-{
-	width:757px;
+#module-moneytigo-payment #center_column {
+  width: 757px;
 }
-
- p.payment_module a.moneytigo-logo-link {
-background-color: #fbfbfb;
- 
+p.payment_module a.moneytigo-logo-link {
+  background-color: #fbfbfb;
 }
-
 p.payment_module a.moneytigo-logo-link:after {
-    display: block;
-    content: "\f054";
-    position: absolute;
-    right: 15px;
-    margin-top: -11px;
-    top: 50%;
-    font-family: "FontAwesome";
-    font-size: 25px;
-    height: 22px;
-    width: 14px;
-    color: #777;
+  display: block;
+  content: "\f054";
+  position: absolute;
+  right: 15px;
+  margin-top: -11px;
+  top: 50%;
+  font-family: "FontAwesome";
+  font-size: 25px;
+  height: 22px;
+  width: 14px;
+  color: #777;
 }
-
 p.payment_module a.moneytigo-logo-link:hover {
-    background-color: #C4F0B5;
+  background-color: #C4F0B5;
 }
-
-.label_return_pending
-{
-	font-size: 25px;
-	font-weight: bold;
-	color: #3B3B3A;
-	border-style: solid;
-	border-width: 8px;
-	border-color: #F39217;
-	background-color: #F39217;
+.moneytigo_table {
+  font-size: 16px;
+  color: #000000;
 }
-
-.label_return_authorised
-{
-	font-size: 25px;
-	font-weight: bold;
-	color: #3B3B3A;
-	border-style: solid;
-	border-width: 8px;
-	border-color: #96CA2D;
-	background-color: #96CA2D;
+.moneytigo_td {
+  font-size: 16px;
+  font-weight: bold;
+  color: #000000;
+}
+.moneytigo_tdlight {
+  font-size: 16px;
+  color: #000000;
+}
+.moneytigo_confirmp {
+  font-size: 16px;
+  color: #000000;
+}
+.moneytigo_saveorder {
+  font-size: 25px;
+  font-weight: bold;
+  color: #166C01;
+  border-style: solid;
+  border-width: 2px;
+  padding: 5px;
+  border-color: #166C01;
 }

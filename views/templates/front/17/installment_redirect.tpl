@@ -12,4 +12,5 @@
     *  @license   moneytigo.com
 *}
 
-<p>{l s='Your payment was declined' mod='moneytigo'}</p>
+<p class="payment_module"> <img id="CB" class="moneytigo-logo" src="{$mtglogocard|escape:'htmlall':'UTF-8'}" alt="carte" width="140px"/><br>
+  {l s='You will be redirected to our secure payment server' mod='moneytigo'} </p>

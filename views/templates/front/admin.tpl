@@ -21,7 +21,7 @@
   {/if}
   {if $display_msg_confirmation == '1'}
   <div class="panel">
-    <div class="alert_moneytigo_admin{$msg_confirmation_class|escape:'htmlall':'UTF-8'}"> {$msg_confirmation|escape:'htmlall':'UTF-8'} </div>
+    <div class="{$msg_confirmation_class|escape:'htmlall':'UTF-8'}"> {$msg_confirmation} </div>
   </div>
   {/if}
   <div role="tabpanel" style="margin-top: 20px;">
@@ -33,36 +33,79 @@
       <div id="config_moneytigo_div" class="tab-pane {$activeTab_1|escape:'htmlall':'UTF-8'}" role="tabpanel">
         <div class="panel" style="min-height:470px;">
           <form method="post" action="{$actionForm|escape:'htmlall':'UTF-8'}" class="account-creation" id="formMoneyTigo">
+            <h2>{l s='Technical settings' mod='moneytigo'}</h2>
+            <div class="alert alert-warning">{l s='First of all, in order for the MoneyTigo payment module to appear on your shopping cart, you need to enter your API Key (MerchantKey) and your secret encryption key (SecretKey)' mod='moneytigo'}</div>
             <input type="hidden" id="ips_action" name="MONEYTIGO_ADMIN_ACTION" value="UPDATE">
-            <label for="api_key"> {$label_api_key|escape:'htmlall':'UTF-8'} </label>
+            <label for="api_key" style="margin-top:5px;"> {$label_api_key|escape:'htmlall':'UTF-8'} </label>
             <input type="text" id="api_key" name="MONEYTIGO_GATEWAY_API_KEY" value="{$value_api_key|escape:'htmlall':'UTF-8'}">
-            <label for="crypt_key"> {$label_crypt_key|escape:'htmlall':'UTF-8'} </label>
+            <label for="crypt_key" style="margin-top:5px;"> {$label_crypt_key|escape:'htmlall':'UTF-8'} </label>
             <input type="text" id="crypt_key" name="MONEYTIGO_GATEWAY_CRYPT_KEY" value="{$value_crypt_key|escape:'htmlall':'UTF-8'}">
             <hr>
             <p> <a href="https://app.moneytigo.com/user/register" title="{l s='Open MoneyTigo Account for free' mod='moneytigo'}" target="_blank">{l s='Open an account immediately' mod='moneytigo'}</a></p>
             <hr>
-			<label for="integrated">{l s='Activation of IFRAME mode (InSite)' mod='moneytigo'}</label>
+            <h2>{l s='Activate the embedded mode' mod='moneytigo'}</h2>
+            <span class="badge badge-pill badge-info" style="font-size: 10px;"> {l s='Only for standard payment' mod='moneytigo'}</span>
+            <p>{l s='The embedded mode allows you not to redirect the customer to the page of MoneyTigo but to display directly on your website the payment form' mod='moneytigo'}</p>
             <span class="switch prestashop-switch">
             <input type="radio" name="MONEYTIGO_INTEGRATED" id="activer_integrated" value="on"{$integrated_on|escape:'htmlall':'UTF-8'}/>
             <label for="activer_integrated">{l s='Enable' mod='moneytigo'}</label>
             <input type="radio" name="MONEYTIGO_INTEGRATED" id="desactiver_integrated" value="off"{$integrated_off|escape:'htmlall':'UTF-8'}/>
             <label for="desactiver_integrated">{l s='Disable' mod='moneytigo'}</label>
-            <a class="slide-button btn"></a> 
-			<p class="help-block text-left">{l s='If you activate this mode, your customer will not be redirected to MoneyTigo at the time of payment, he will remain on your order page, if so, he will be redirected to MoneyTigo.' mod='moneytigo'} 
-			</p>
-			</span><br>
-			<hr>  
-			  
-            <label for="p3f">{l s='Payment split in 3x' mod='moneytigo'}</label>
+            <a class="slide-button btn"></a> </span>
+            <hr>
+            <h2>{l s='Setting of the payment in 2 times' mod='moneytigo'}</h2>
+            <p>{l s='The payment in 2 times allows you to propose to your customer a facility of payment in order to settle his order in two monthly payments' mod='moneytigo'} **</p>
+            <label for="p2f">{l s='Activate the payment in 2 times' mod='moneytigo'}</label>
+            <span class="switch prestashop-switch">
+            <input type="radio" name="MONEYTIGO_GATEWAY_P2F" id="activer_p2f" value="on"{$p2f_on|escape:'htmlall':'UTF-8'}/>
+            <label for="activer_p2f">{l s='Enable' mod='moneytigo'}</label>
+            <input type="radio" name="MONEYTIGO_GATEWAY_P2F" id="desactiver_p2f" value="off"{$p2f_off|escape:'htmlall':'UTF-8'}/>
+            <label for="desactiver_p2f">{l s='Disable' mod='moneytigo'}</label>
+            <a class="slide-button btn"></a> </span>
+            <div id="settings_p2f" {if $p2f_off}style="display: none"{/if}>
+              <label for="seuil_p2f" style="margin-top:5px;">{l s='Minimum triggering threshold (Min 50 €)' mod='moneytigo'} </label>
+              <input type="text" id="seuil_p2f" name="MONEYTIGO_TRIGGER_P2F" value="{$seuil_p2f|escape:'htmlall':'UTF-8'}" placeholder="50" ; >
+              <div> {l s='If you set a threshold in this case this payment method will be displayed only when the customer cart total is at least equal to this threshold' mod='moneytigo'}<span class="badge badge-pill badge-warning" style="font-size: 10px;"> {l s='If not defined, 50€ will be the default threshold' mod='moneytigo'}</span></div>
+              <label for="fee_p2f"  style="margin-top:5px;">{l s='Fees to be applied to this payment method' mod='moneytigo'} </label>
+              <input type="text" id="fee_p2f" name="MONEYTIGO_FEE_P2F" value="{$fee_p2f|escape:'htmlall':'UTF-8'}" placeholder="0" ; >
+              <div class="alert alert-danger" style='margin-top: 5px;'> {l s='0 indicates no fees, however you can indicate fees that correspond to a percentage of the total amount of the cart, if you indicate 1 it will indicate 1%, be careful not to use a comma but only a point as a decimal separator.' mod='moneytigo'}</div>
+              <hr>
+            </div>
+            <h2>{l s='Setting of the payment in 3 times' mod='moneytigo'}</h2>
+            <p>{l s='The payment in 3 times allows you to propose to your customer a facility of payment in order to settle his order in three monthly payments' mod='moneytigo'} **</p>
+            <label for="p3f">{l s='Activate the payment in 3 times' mod='moneytigo'}</label>
             <span class="switch prestashop-switch">
             <input type="radio" name="MONEYTIGO_GATEWAY_P3F" id="activer_p3f" value="on"{$p3f_on|escape:'htmlall':'UTF-8'}/>
             <label for="activer_p3f">{l s='Enable' mod='moneytigo'}</label>
             <input type="radio" name="MONEYTIGO_GATEWAY_P3F" id="desactiver_p3f" value="off"{$p3f_off|escape:'htmlall':'UTF-8'}/>
             <label for="desactiver_p3f">{l s='Disable' mod='moneytigo'}</label>
             <a class="slide-button btn"></a> </span>
-            <label for="seuil_p3f">{l s='Split payment trigger threshold' mod='moneytigo'} </label>
-            <input type="text" id="seuil_p3f" name="MONEYTIGO_TRIGGER_P3F" value="{$seuil_p3f|escape:'htmlall':'UTF-8'}" placeholder="100" ; >
-            <span class="badge badge-danger"> {l s='(Minimum 100 Euros)' mod='moneytigo'}</span>
+            <div id="settings_p3f" {if $p3f_off}style="display: none"{/if}>
+              <label for="seuil_p3f" style="margin-top:5px;">{l s='Minimum triggering threshold (Min 50 €)' mod='moneytigo'} </label>
+              <input type="text" id="seuil_p3f" name="MONEYTIGO_TRIGGER_P3F" value="{$seuil_p3f|escape:'htmlall':'UTF-8'}" placeholder="50" ; >
+              <div> {l s='If you set a threshold in this case this payment method will be displayed only when the customer cart total is at least equal to this threshold' mod='moneytigo'}<span class="badge badge-pill badge-warning" style="font-size: 10px;"> {l s='If not defined, 50€ will be the default threshold' mod='moneytigo'}</span></div>
+              <label for="fee_p3f"  style="margin-top:5px;">{l s='Fees to be applied to this payment method' mod='moneytigo'} </label>
+              <input type="text" id="fee_p3f" name="MONEYTIGO_FEE_P3F" value="{$fee_p3f|escape:'htmlall':'UTF-8'}" placeholder="0" ; >
+              <div class="alert alert-danger" style='margin-top: 5px;'> {l s='0 indicates no fees, however you can indicate fees that correspond to a percentage of the total amount of the cart, if you indicate 1 it will indicate 1%, be careful not to use a comma but only a point as a decimal separator.' mod='moneytigo'}</div>
+              <hr>
+            </div>
+            <h2>{l s='Setting of the payment in 4 times' mod='moneytigo'}</h2>
+            <p>{l s='The payment in 4 times allows you to propose to your customer a facility of payment in order to settle his order in four monthly payments' mod='moneytigo'} **</p>
+            <label for="p4f">{l s='Activate the payment in 4 times' mod='moneytigo'}</label>
+            <span class="switch prestashop-switch">
+            <input type="radio" name="MONEYTIGO_GATEWAY_P4F" id="activer_p4f" value="on"{$p4f_on|escape:'htmlall':'UTF-8'}/>
+            <label for="activer_p4f">{l s='Enable' mod='moneytigo'}</label>
+            <input type="radio" name="MONEYTIGO_GATEWAY_P4F" id="desactiver_p4f" value="off"{$p4f_off|escape:'htmlall':'UTF-8'}/>
+            <label for="desactiver_p4f">{l s='Disable' mod='moneytigo'}</label>
+            <a class="slide-button btn"></a> </span>
+            <div id="settings_p4f" {if $p4f_off}style="display: none"{/if}>
+              <label for="seuil_p4f" c>{l s='Minimum triggering threshold (Min 50 €)' mod='moneytigo'} </label>
+              <input type="text" id="seuil_p4f" name="MONEYTIGO_TRIGGER_P4F" value="{$seuil_p4f|escape:'htmlall':'UTF-8'}" placeholder="50" ; >
+              <div> {l s='If you set a threshold in this case this payment method will be displayed only when the customer cart total is at least equal to this threshold' mod='moneytigo'} <span class="badge badge-pill badge-warning" style="font-size: 10px;"> {l s='If not defined, 50€ will be the default threshold' mod='moneytigo'}</span></div>
+              <label for="fee_p4f"  style="margin-top:5px;">{l s='Fees to be applied to this payment method' mod='moneytigo'} </label>
+              <input type="text" id="fee_p4f" name="MONEYTIGO_FEE_P4F" value="{$fee_p4f|escape:'htmlall':'UTF-8'}" placeholder="0" ; >
+              <div class="alert alert-danger" style='margin-top: 5px;'> {l s='0 indicates no fees, however you can indicate fees that correspond to a percentage of the total amount of the cart, if you indicate 1 it will indicate 1%, be careful not to use a comma but only a point as a decimal separator.' mod='moneytigo'}</div>
+            </div>
             <hr>
             <input type="button" name="submitMoneytigo" class="btn btn-default btn-primary" value="{l s='Update configuration' mod='moneytigo'}" id="submitMoneytigo" onclick="MoneyTigoFX.validateFormMoneyTigo();" style="margin-top:-5px;">
           </form>

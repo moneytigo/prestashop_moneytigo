@@ -11,11 +11,11 @@
     *  @copyright 2018-2021 IPS INTERNATIONNAL SAS
     *  @license   moneytigo.com
 *}
-{if $AuthorizedFailed =='1'} 
+
 <script type="application/javascript">
-var ips_failed = '{$AuthorizedFailed}';
+var ips_failed = "{$MessageAnswer}";
 var ips_message = "{l s='Your bank refused the payment!' mod='moneytigo'}";
-</script> 
-{/if}
-<p class="payment_module"> <img id="CB" class="moneytigo-logo" src="{$path_img|escape:'htmlall':'UTF-8'}/views/img/carte.png" alt="carte" width="140px"/><br>
-  {l s='You will be redirected to our secure payment server' mod='moneytigo'} </p>
+</script>
+
+<p class="payment_module"><img id="CB" class="moneytigo-logo" src="{$mtglogocard|escape:'htmlall':'UTF-8'}" alt="carte" width="140px"/><br>
+  {l s='You will be redirected to our secure payment server' mod='moneytigo'}</p>
