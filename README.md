@@ -11,6 +11,7 @@ To install MoneyTigo plugin we invite you first :
 
 ### For prestashop V1.6
 
+* As a priority - [Download the archive of the module by clicking here](https://github.com/moneytigo/prestashop_moneytigo/releases/download/v1.1.1/moneytigo-1617-v_1_1_1.zip)
 * 1 - Go to your PRESTASHOP dashboard
 * 2 - Go to the module manager (modules and services > modules and services)
 * 3 - At the top right, click on "Add a new module" then "select the Moneytigo module archive" then click on "Load the module".
@@ -22,6 +23,7 @@ To install MoneyTigo plugin we invite you first :
 
 ### For prestashop V1.7
 
+* As a priority - [Download the archive of the module by clicking here](https://github.com/moneytigo/prestashop_moneytigo/releases/download/v1.1.1/moneytigo-1617-v_1_1_1.zip)
 * 1 - Go to your PRESTASHOP dashboard
 * 2 - Go to the module manager (modules > module managers)
 * 3 - At the top right, click on "Install a module" then "select the Moneytigo module archive".
