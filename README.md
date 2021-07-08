@@ -44,7 +44,7 @@ If you use the test mode you must use the following virtual credit cards:
 * **Payment approved** : Card n° 4000 0000 0000 0002 , Expiry 12/22 , Cvv 123
 * **Payment declined** : Card n° 4000 0000 0000 0036 , Expiry 12/22, Cvv 123
 * **(Virtual cards do not work in production mode)**
-* 
+
 # UPDATE OF AN OLD MONEYTIGO MODULE
 
 The procedure of update is the same in both version of prestashop you just have to follow the points 1 to 4 indicated above, prestashop will automatically update the module with the new version and keeping all your data so it will not be necessary to reconfigure it, if the module is not displayed after update we just invite you to check the prestashop restrictions mentioned in the point 6.
