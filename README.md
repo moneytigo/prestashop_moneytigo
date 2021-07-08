@@ -1,4 +1,4 @@
-## MoneyTigo Payment Module for PrestaShop ##
+## MoneyTigo Payment Module for PrestaShop 1.6 & 1.7
 
 This payment module allows you to accept credit card payments through MoneyTigo.com payment solution (https://www.moneytigo.com).
 This payment module is compatible with all versions of prestashop 1.6 & 1.7
