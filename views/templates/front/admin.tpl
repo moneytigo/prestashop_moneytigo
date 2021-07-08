@@ -141,6 +141,10 @@
           <p>{l s='But don\'t forget you will be able to collect your customers from the opening!' mod='moneytigo'}</p>
           <h2 class="colorBlueMoneyTigo">{l s='How to configure MoneyTigo?' mod='moneytigo'}</h2>
           <p>{l s='Add your website, in your MoneyTigo dashboard, retrieve the API key as well as your secret key and indicate it in the  settings section of this module. Then you need to add to your dashboard in the contract section the IP address of the server that hosts your website.' mod='moneytigo'}</p>
+          <h2 class="colorBlueMoneyTigo">{l s='MoneyTigo is not displayed on the order page ? ' mod='moneytigo'}</h2>
+          <p>{l s='If you have well configured the module (adding the API key and the secret key) it means that you have prestashop restrictions active, in the tab "payment>preferences" check that in "country restrictions" that moneytigo is active for payments where you want to display it' mod='moneytigo'}</p>
+          <h2 class="colorBlueMoneyTigo">{l s='How to install an update of MoneyTigo module?' mod='moneytigo'}</h2>
+          <p>{l s='You just have to download the new archive and install it as if it was a new module, prestashop will automatically update your current version to the new version' mod='moneytigo'}</p>
           <h2 class="colorBlueMoneyTigo">{l s='What are the payment methods accepted by MoneyTigo?' mod='moneytigo'}</h2>
           <p>{l s='Visa, Carte Bleue, Mastercard, Amex, Electron, Maestro ... We are increasing day by day the available modes' mod='moneytigo'}</p>
           <h2 class="colorBlueMoneyTigo">{l s='Who are we ?' mod='moneytigo'}</h2>

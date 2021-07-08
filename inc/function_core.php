@@ -25,9 +25,18 @@ class moneytigoCore extends Moneytigo {
   }
   /* Management of the activation and deactivation of the payment in several times */
   public function getleaseactive( $amount ) {
-    $seuil2 = ( int )Configuration::get( 'MONEYTIGO_TRIGGER_P2F' );
-    $seuil3 = ( int )Configuration::get( 'MONEYTIGO_TRIGGER_P3F' );
-    $seuil4 = ( int )Configuration::get( 'MONEYTIGO_TRIGGER_P4F' );
+    $seuil2 = Configuration::get( 'MONEYTIGO_TRIGGER_P2F' );
+    $seuil3 = Configuration::get( 'MONEYTIGO_TRIGGER_P3F' );
+    $seuil4 = Configuration::get( 'MONEYTIGO_TRIGGER_P4F' );
+    if ( !$seuil2 || $seuil2 < 50 ) {
+      $seuil2 = "50";
+    }
+    if ( !$seuil3 || $seuil3 < 50 ) {
+      $seuil3 = "50";
+    }
+    if ( !$seuil4 || $seuil4 < 50 ) {
+      $seuil4 = "50";
+    }
     $pnf2 = Configuration::get( 'MONEYTIGO_GATEWAY_P2F' );
     $pnf3 = Configuration::get( 'MONEYTIGO_GATEWAY_P3F' );
     $pnf4 = Configuration::get( 'MONEYTIGO_GATEWAY_P4F' );
@@ -58,6 +67,7 @@ class moneytigoCore extends Moneytigo {
       'Customer_Name' => $CustomerIs->{'lastname'},
       'Customer_FirstName' => $CustomerIs->{'firstname'},
       'Customer_Email' => $CustomerIs->{'email'},
+      'extension' => 'prestashop-1.1.1',
       'urlIPN' => $urlIPN,
       'urlOK' => $Mtd->context->link->getModuleLink( 'moneytigo', 'return', array( 'customer' => $CustomerIs->secure_key, 'id_cart' => ( int )$cart->id ) ),
       'urlKO' => $Mtd->context->link->getModuleLink( 'moneytigo', 'return', array( 'customer' => $CustomerIs->secure_key, 'id_cart' => ( int )$cart->id ) ),
@@ -220,25 +230,25 @@ class moneytigoCore extends Moneytigo {
       if ( $transactiondetails->{'Type'}->{'condition'} === "2" ) {
         //2n
         $ApprovedState = Configuration::get( 'MONEYTIGO_OS_ACCEPTED_P2F' );
-		$typetransaction = "pnf2";
+        $typetransaction = "pnf2";
       } elseif ( $transactiondetails->{'Type'}->{'condition'} === "3" ) {
         //3n
         $ApprovedState = Configuration::get( 'MONEYTIGO_OS_ACCEPTED_P3F' );
-		$typetransaction = "pnf3";
+        $typetransaction = "pnf3";
       }
       elseif ( $transactiondetails->{'Type'}->{'condition'} === "4" ) {
         //4n
         $ApprovedState = Configuration::get( 'MONEYTIGO_OS_ACCEPTED_P4F' );
-		$typetransaction = "pnf4";
+        $typetransaction = "pnf4";
 
       }
- 
+
 
     } else
 
     {
       $ApprovedState = Configuration::get( 'MONEYTIGO_OS_ACCEPTED' );
-	$typetransaction = "standard";
+      $typetransaction = "standard";
     }
 
     $CartingID = $transactiondetails->{'Merchant_Order_Id'};

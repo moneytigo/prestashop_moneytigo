@@ -98,10 +98,10 @@ class MoneytigoInstall {
     // If it already exists then it is assigned to the MoneyTigo configuration
     foreach ( Language::getLanguages() as $language ) {
       if ( Tools::strtolower( $language[ 'iso_code' ] ) == 'fr' ) {
-        $nameToCheck = 'Paiement carte accepté';
+        $nameToCheck = 'Paiement CB Accepté';
         $iso = $language[ 'id_lang' ];
       } else {
-        $nameToCheck = 'Credit card payment approved';
+        $nameToCheck = 'Card payment approved';
         $iso = $language[ 'id_lang' ];
       }
     }
@@ -113,9 +113,9 @@ class MoneytigoInstall {
         $orderState->name = array();
         foreach ( Language::getLanguages() as $language ) {
           if ( Tools::strtolower( $language[ 'iso_code' ] ) == 'fr' ) {
-            $orderState->name[ $language[ 'id_lang' ] ] = 'Paiement carte accepté';
+            $orderState->name[ $language[ 'id_lang' ] ] = 'Paiement CB Accepté';
           } else {
-            $orderState->name[ $language[ 'id_lang' ] ] = 'Credit card payment approved';
+            $orderState->name[ $language[ 'id_lang' ] ] = 'Card payment approved';
           }
         }
         $orderState->send_email = true;
@@ -144,10 +144,10 @@ class MoneytigoInstall {
     // If it already exists then it is assigned to the MoneyTigo configuration
     foreach ( Language::getLanguages() as $language ) {
       if ( Tools::strtolower( $language[ 'iso_code' ] ) == 'fr' ) {
-        $nameToCheck = 'Paiement carte 2x accepté';
+        $nameToCheck = 'Paiement CB 2X accepté';
         $iso = $language[ 'id_lang' ];
       } else {
-        $nameToCheck = 'Card payment 2x approved';
+        $nameToCheck = 'Card payment(2X) approved';
         $iso = $language[ 'id_lang' ];
       }
     }
@@ -159,9 +159,9 @@ class MoneytigoInstall {
         $orderState->name = array();
         foreach ( Language::getLanguages() as $language ) {
           if ( Tools::strtolower( $language[ 'iso_code' ] ) == 'fr' ) {
-            $orderState->name[ $language[ 'id_lang' ] ] = 'Paiement carte 2x accepté';
+            $orderState->name[ $language[ 'id_lang' ] ] = 'Paiement CB 2X accepté';
           } else {
-            $orderState->name[ $language[ 'id_lang' ] ] = 'Card payment 2x approved';
+            $orderState->name[ $language[ 'id_lang' ] ] = 'Card payment(2X) approved';
           }
         }
         $orderState->send_email = true;
@@ -190,10 +190,10 @@ class MoneytigoInstall {
     // If it already exists then it is assigned to the MoneyTigo configuration
     foreach ( Language::getLanguages() as $language ) {
       if ( Tools::strtolower( $language[ 'iso_code' ] ) == 'fr' ) {
-        $nameToCheck = 'Paiement carte 3x accepté';
+        $nameToCheck = 'Paiement CB 3X accepté';
         $iso = $language[ 'id_lang' ];
       } else {
-        $nameToCheck = 'Card payment 3x approved';
+        $nameToCheck = 'Card payment(3X) approved';
         $iso = $language[ 'id_lang' ];
       }
     }
@@ -205,9 +205,9 @@ class MoneytigoInstall {
         $orderState->name = array();
         foreach ( Language::getLanguages() as $language ) {
           if ( Tools::strtolower( $language[ 'iso_code' ] ) == 'fr' ) {
-            $orderState->name[ $language[ 'id_lang' ] ] = 'Paiement carte 3x accepté';
+            $orderState->name[ $language[ 'id_lang' ] ] = 'Paiement CB 3X accepté';
           } else {
-            $orderState->name[ $language[ 'id_lang' ] ] = 'Card payment 3x approved';
+            $orderState->name[ $language[ 'id_lang' ] ] = 'Card payment(3X) approved';
           }
         }
         $orderState->send_email = true;
@@ -236,10 +236,10 @@ class MoneytigoInstall {
     // If it already exists then it is assigned to the MoneyTigo configuration
     foreach ( Language::getLanguages() as $language ) {
       if ( Tools::strtolower( $language[ 'iso_code' ] ) == 'fr' ) {
-        $nameToCheck = 'Paiement carte 4x accepté';
+        $nameToCheck = 'Paiement CB 4X accepté';
         $iso = $language[ 'id_lang' ];
       } else {
-        $nameToCheck = 'Card payment 4x approved';
+        $nameToCheck = 'Card payment(4X) approved';
         $iso = $language[ 'id_lang' ];
       }
     }
@@ -251,9 +251,9 @@ class MoneytigoInstall {
         $orderState->name = array();
         foreach ( Language::getLanguages() as $language ) {
           if ( Tools::strtolower( $language[ 'iso_code' ] ) == 'fr' ) {
-            $orderState->name[ $language[ 'id_lang' ] ] = 'Paiement carte 4x accepté';
+            $orderState->name[ $language[ 'id_lang' ] ] = 'Paiement CB 4X accepté';
           } else {
-            $orderState->name[ $language[ 'id_lang' ] ] = 'Card payment 4x approved';
+            $orderState->name[ $language[ 'id_lang' ] ] = 'Card payment(4X) approved';
           }
         }
         $orderState->send_email = true;

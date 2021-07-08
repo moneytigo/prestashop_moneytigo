@@ -139,6 +139,8 @@ class Moneytigo extends PaymentModule {
     if ( !$this->isAvailable() ) {
       return;
     }
+
+
     $moneytigoCore = new moneytigoCore();
     $cart = $params[ "cart" ];
     $PnfActive = $moneytigoCore::getleaseactive( $cart->getordertotal( true ) );
@@ -234,6 +236,7 @@ class Moneytigo extends PaymentModule {
    */
 
   public function hookPaymentOptions( $params ) {
+
     $moneytigoCore = new moneytigoCore();
     $cart = $params[ "cart" ];
     $payment_options = array();
@@ -252,10 +255,12 @@ class Moneytigo extends PaymentModule {
     /** Pnf payment   **/
     $PnfActive = $moneytigoCore::getleaseactive( $cart->getordertotal( true ) );
 
-    foreach ( $PnfActive as $key => $value ) {
-      $PnfMethod = $this->optionPaymentPNF( $params, $value );
-      if ( $PnfMethod[ 'result' ] ) {
-        array_push( $payment_options, $PnfMethod[ 'params' ] );
+    if ( isset( $PnfActive ) ) {
+      foreach ( $PnfActive as $key => $value ) {
+        $PnfMethod = $this->optionPaymentPNF( $params, $value );
+        if ( $PnfMethod[ 'result' ] ) {
+          array_push( $payment_options, $PnfMethod[ 'params' ] );
+        }
       }
     }
     return $payment_options;
