@@ -1,10 +1,36 @@
-# MoneyTigo payment module for Prestashop 1.6 & 1.7
+## MoneyTigo Payment Module for PrestaShop ##
 
-This payment module allows you to accept credit card payments with MoneyTigo solution (https://www.moneytigo.com) directly on your Prestashop website.
+This payment module allows you to accept credit card payments through MoneyTigo.com payment solution (https://www.moneytigo.com).
+This payment module is compatible with all versions of prestashop 1.6 & 1.7
 
-The module is compatible with Prestashop version 1.6.x and 1.7.x.
+* Module version: 1.1.1
 
-## INSTALLATION ##
+# INSTALLATION FOR THE FIRST TIME
 
-Currently this plugin must be installed manually, that is to say that you must download the archive and then add it to your PrestaShop module manager.
+To install MoneyTigo plugin we invite you first : 
 
+### For prestashop V1.6
+
+* 1 - Go to your PRESTASHOP dashboard
+* 2 - Go to the module manager (modules and services > modules and services)
+* 3 - At the top right, click on "Add a new module" then "select the Moneytigo module archive" then click on "Load the module".
+* 4 - The module is loaded, you must click on the button "install" then "continue installation".
+* 5 - Fill in your API key and your SECRET key (which you will find in your MoneyTigo space) then click on "Update configuration".
+* 6 - Then go to (modules and services > payment) in the section "country restriction" check the countries in which you want to display MoneyTigo then save
+* 7 - The installation is finished and functional!
+* (Note: To test transactions, don't forget to switch your website (in your MoneyTigo interface, in test/demo mode) and switch it to production when your tests are finished.
+
+### For prestashop V1.7
+
+* 1 - Go to your PRESTASHOP dashboard
+* 2 - Go to the module manager (modules > module managers)
+* 3 - At the top right, click on "Install a module" then "select the Moneytigo module archive".
+* 4 - The module is loaded, you must click on the button "Configure".
+* 5 - Fill in your API key and your SECRET key (which you will find in your MoneyTigo space) then click on "Update configuration".
+* 6 - Then go to (payment > preferences) in the section "country restrictions" check the countries in which you want to display MoneyTigo then save
+* 7 - The installation is finished and functional!
+* (Note: To test transactions, don't forget to switch your website (in your MoneyTigo interface, in test/demo mode) and switch it to production when your tests are finished.
+
+# UPDATE OF AN OLD MONEYTIGO MODULE
+
+The procedure of update is the same in both version of prestashop you just have to follow the points 1 to 4 indicated above, prestashop will automatically update the module with the new version and keeping all your data so it will not be necessary to reconfigure it, if the module is not displayed after update we just invite you to check the prestashop restrictions mentioned in the point 6.
