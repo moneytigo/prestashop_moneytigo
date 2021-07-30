@@ -1,4 +1,4 @@
-##### [<< Retour à la page d'accueil des plugins](https://plugins.moneytigo.com/english/)
+##### [<< Retour à la page d'accueil des plugins](https://plugins.moneytigo.com/french/)
 
 ## Module de paiement MoneyTigo pour PrestaShop 1.6 & 1.7
 
