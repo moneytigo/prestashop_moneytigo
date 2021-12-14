@@ -33,7 +33,7 @@ class Moneytigo extends PaymentModule {
   public function __construct() {
     $this->name = 'moneytigo';
     $this->tab = 'payments_gateways';
-    $this->version = '1.1.1';
+    $this->version = '1.1.2';
     $this->author = 'IPS INTERNATIONNAL SAS';
     $this->controllers = array( 'validation' );
     $this->is_eu_compatible = 1;
@@ -272,7 +272,7 @@ class Moneytigo extends PaymentModule {
     if ( $Tokenise[ 'success' ] == false ) {
       $error = $Tokenise[ 'error_message' ];
     }
-    $embeddedOption = new PrestaShop\ PrestaShop\ Core\ Payment\ PaymentOption;
+    $embeddedOption = new PrestaShop\PrestaShop\Core\Payment\PaymentOption;
     //Sent value for generate MONEYTIGO Request SDK
     $this->context->smarty->assign(
       array(
@@ -297,7 +297,7 @@ class Moneytigo extends PaymentModule {
         'mtglogocard' => Media::getMediaPath( _PS_MODULE_DIR_ . $this->name . '/views/img/carte.png' ),
         'MessageAnswer' => Tools::getValue( 'ips_failed' )
       ) );
-    $optionD = new PrestaShop\ PrestaShop\ Core\ Payment\ PaymentOption;
+    $optionD = new PrestaShop\PrestaShop\Core\Payment\PaymentOption;
     $optionD->setCallToActionText( $this->l( 'Pay by card' ) )->setAction( $Tokenise[ 'UriToRedirect' ] )->setAdditionalInformation(
       $this->context->smarty->fetch( 'module:moneytigo/views/templates/front/17/standard_redirect.tpl' )
     );
@@ -328,7 +328,7 @@ class Moneytigo extends PaymentModule {
       ) );
     if ( isset( $Tokenise[ 'UriToRedirect' ] ) ) {
 
-      $optionD = new PrestaShop\ PrestaShop\ Core\ Payment\ PaymentOption;
+      $optionD = new PrestaShop\PrestaShop\Core\Payment\PaymentOption;
       $optionD->setCallToActionText( $tras )->setAction( $Tokenise[ 'UriToRedirect' ] )->setAdditionalInformation(
         $this->context->smarty->fetch( 'module:moneytigo/views/templates/front/17/installment_redirect.tpl' )
       );

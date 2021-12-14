@@ -2,7 +2,7 @@
 <module>
 	<name>moneytigo</name>
 	<displayName><![CDATA[MoneyTigo]]></displayName>
-	<version><![CDATA[1.1.1]]></version>
+	<version><![CDATA[1.1.2]]></version>
 	<description><![CDATA[Accept credit card payments in minutes]]></description>
 	<author><![CDATA[IPS INTERNATIONNAL SAS]]></author>
 	<tab><![CDATA[payments_gateways]]></tab>

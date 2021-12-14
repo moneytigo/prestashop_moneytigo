@@ -1,3 +1,6 @@
+2021-12-14 - Updating
+Fix bug during installation on prestashop 1.7.8.2 version
+
 2021-07-05 - Updating
 Optimization of the payment process
 Adding the payment in 2 times

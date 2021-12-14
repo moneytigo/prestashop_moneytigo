@@ -5,7 +5,7 @@
 Ce module de paiement vous permet d'accepter les paiements par carte de crédit via la solution de paiement MoneyTigo.com. (https://www.moneytigo.com).
 Ce module de paiement est compatible avec toutes les versions de prestashop 1.6 & 1.7
 
-* Version du module: 1.1.1
+* Version du module: 1.1.2
 
 # INSTALLATION
 
